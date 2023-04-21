@@ -1,8 +1,5 @@
 import 'package:cipher_schools/config/config.dart';
-import 'package:cipher_schools/presentation/widgets/bg_image_card.dart';
-import 'package:cipher_schools/presentation/widgets/counts.dart';
-import 'package:cipher_schools/presentation/widgets/hero.dart';
-import 'package:cipher_schools/presentation/widgets/course_card.dart';
+import 'package:cipher_schools/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -67,30 +64,52 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Column(
-          children: const [
-            MyHero(),
-            Counts(),
-            BgImageCard(
-                imageUrl:
-                    'https://ik.imagekit.io/cipherschools/CipherSchools/for-student_nm1kTXQDf.jpg',
-                tag: 'Unlock your learning potential with CipherSchools',
-                name: 'Best platform for the students',
-                buttonIcon: Icons.school_outlined,
-                buttonText: 'For Students'),
-            SizedBox(height: 20),
-            BgImageCard(
-                imageUrl:
-                    'https://ik.imagekit.io/cipherschools/CipherSchools/for-creator_sNs5MAVE7.jpg',
-                tag:
-                    'Empowering students to open their minds to utmost knowledge',
-                name: 'Be the mentor you never had',
-                buttonIcon: Icons.credit_card_rounded,
-                buttonText: 'For Creators'),
-          ],
-        ),
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Column(
+              children: const [
+                MyHero(),
+                Counts(),
+                BgImageCard(
+                    imageUrl:
+                        'https://ik.imagekit.io/cipherschools/CipherSchools/for-student_nm1kTXQDf.jpg',
+                    tag: 'Unlock your learning potential with CipherSchools',
+                    name: 'Best platform for the students',
+                    buttonIcon: Icons.school_outlined,
+                    buttonText: 'For Students'),
+                SizedBox(height: 20),
+                BgImageCard(
+                    imageUrl:
+                        'https://ik.imagekit.io/cipherschools/CipherSchools/for-creator_sNs5MAVE7.jpg',
+                    tag:
+                        'Empowering students to open their minds to utmost knowledge',
+                    name: 'Be the mentor you never had',
+                    buttonIcon: Icons.credit_card_rounded,
+                    buttonText: 'For Creators'),
+              ],
+            ),
+          ),
+          const StudentLiveFeedback(),
+          Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Column(
+                children: const [
+                  CourseSection(),
+                  ExpertMentors(),
+                ],
+              )),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(vertical: 16),
+            color: const Color(0xffF2F5F9),
+            child: const Text(
+              '© 2020 CipherSchools • All Rights Reserved',
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ],
       ),
     );
   }
