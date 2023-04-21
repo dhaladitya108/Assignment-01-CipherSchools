@@ -35,7 +35,7 @@ class BgImageCard extends StatelessWidget {
             ),
           ),
           Container(
-            height: 380,
+            height: 364,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               gradient: LinearGradient(
